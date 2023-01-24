@@ -55,42 +55,87 @@ D7 = X Y Z
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-/* write all the steps invloved */
+```
+Step-1:
 
+create module encoder and decoder.
+Step-2:
 
+Get inputs and outputs for encoders and decoders.
+Step-3:
+
+perform or operation for encoder and and logic for decoders.
+Step-4:
+
+perform RTL LOGIC and get waveform.
+Step-5:
+
+End the module.
+```
 
 ### PROGRAM 
-/*
+```
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: SATHISH R
+RegisterNumber: 22009045  
+```
+### ENCODER:
+```
+module EX7(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+output a,b,c;
+input d0,d1,d2,d3,d4,d5,d6,d7;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
+```
 
+### DECODER:
+```
+module EX7(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+input a,b,c;
+output d0,d1,d2,d3,d4,d5,d6,d7;
+assign d0 = (~a&~b&~c);
+assign d1 = (~a&~b&c);
+assign d2 = (~a&b&~c);
+assign d3 = (~a&b&c);
+assign d4 = (a&~b&~c);
+assign d5 = (a&~b&c);
+assign d6 = (a&b&~c);
+assign d7 = (a&b&c);
+endmodule
+```
 
+### RTL LOGIC 
 
+### ENCODER:
 
+![RTL EC](https://user-images.githubusercontent.com/120574768/214295569-f3aea950-16ce-4200-b192-e2cf56736871.png)
 
+### DECODER:
 
-### RTL LOGIC  
-
-
-
-
-
-
-
+![DECODER RTL](https://user-images.githubusercontent.com/120574768/214295554-73d284f5-30f7-4fa2-b273-b451eb9397fe.png)
 
 ### TIMING DIGRAMS  
 
+### ENCODER:
 
+![tD EC](https://user-images.githubusercontent.com/120574768/214295431-fbcf9ba1-8bd2-4b20-a7c0-e550e1a7afeb.png)
 
+### DECODER:
 
+![TIMING DE](https://user-images.githubusercontent.com/120574768/214295443-3310f80b-6ace-4ad3-ba76-17340bb7e9bb.png)
 
 ### TRUTH TABLE 
 
+### ENCODER:
+
+![TRUTHTABLE EC](https://user-images.githubusercontent.com/120574768/214295402-5be34be3-dae3-4550-aef0-17278afca868.png)
+
+### DECODER:
+
+![DE TRUTHTABLE](https://user-images.githubusercontent.com/120574768/214295253-4de8dc25-2014-471a-9338-c4055b3cf045.png)
 
 
-
-
-
-### RESULTS 
+### RESULTS :
+Thus the program to desing encoder and decoder is completed.
